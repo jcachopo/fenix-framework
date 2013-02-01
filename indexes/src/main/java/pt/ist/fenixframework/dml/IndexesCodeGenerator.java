@@ -211,7 +211,8 @@ public class IndexesCodeGenerator extends TxIntrospectorCodeGenerator {
     @Override
     protected void generateRoleSlotMethodsMultStarHasChildBody(Role role, PrintWriter out, String slotAccessExpression,
     		String slotName) {
-    	print(out, "String key = keyFunction$$");
+    	print(out,getIndexedSlot(role).getSlotType().getFullname());
+    	print(out, " key = keyFunction$$");
     	print(out, slotName);
     	print(out, ".getKey(");
     	print(out, slotName);

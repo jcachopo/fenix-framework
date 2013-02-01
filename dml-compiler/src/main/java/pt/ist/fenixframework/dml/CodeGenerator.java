@@ -1285,15 +1285,9 @@ public abstract class CodeGenerator {
 		.getFullname()
 		+ " key");
 	startMethodBody(out);
-	if (haveMany) {
-	    //printWords(out, "return", "java.util.Collections.unmodifiable"+ (returnTypeIsSet ? "Set" : "List")  + "(", "new ");
-	    print(out, getSearchForKey(slotName, collectionToUse));
-	    //print(out, ");");
-	    print(out, ";");
-	} else {
-	    printWords(out, "return", getSearchForKey(slotName, retType));
-	    print(out, ";");
-	}
+	//printWords(out, "return", "java.util.Collections.unmodifiable"+ (returnTypeIsSet ? "Set" : "List")  + "(", "new ");
+	printWords(out, "return", getSearchForKey(slotName, haveMany ? collectionToUse : retType));
+	print(out, ";");
 	endMethodBody(out);
     }
     

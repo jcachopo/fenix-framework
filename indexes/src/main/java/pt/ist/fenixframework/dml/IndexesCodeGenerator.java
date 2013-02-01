@@ -3,6 +3,7 @@ package pt.ist.fenixframework.dml;
 import java.io.PrintWriter;
 import java.util.Iterator;
 
+import pt.ist.fenixframework.DomainObject;
 import pt.ist.fenixframework.FenixFramework;
 import pt.ist.fenixframework.adt.bplustree.IBPlusTree;
 import pt.ist.fenixframework.indexes.InitializerBPlusTree;
@@ -221,6 +222,12 @@ public class IndexesCodeGenerator extends TxIntrospectorCodeGenerator {
     	print(out, "return this.");
     	print(out, slotName);
     	print(out, ".get(key) != null;");
+    }
+    
+    @Override
+    protected String getDefaultCollectionFor(String type) {
+    	// TODO Auto-generated method stub
+    	return super.getDefaultCollectionFor(DomainObject.class.getName());
     }
 
 }

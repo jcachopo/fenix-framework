@@ -23,5 +23,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry combineaccessrules="false" kind="src" path="/fenix-framework-indexes"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/fenix-framework-dml-compiler"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
